@@ -49,6 +49,10 @@ config CFQ_GROUP_IOSCHED
 	---help---
 	  Enable group IO scheduling in CFQ.
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7c60007... block: cgroups, kconfig, build bits for BFQ-v7r8-3.10.8+
 config IOSCHED_BFQ
 	tristate "BFQ I/O scheduler"
 	default n
@@ -61,6 +65,7 @@ config IOSCHED_BFQ
 	  applications. If compiled built-in (saying Y here), BFQ can
 	  be configured to support hierarchical scheduling.
 
+<<<<<<< HEAD
 config IOSCHED_FIOPS
 	tristate "FIOPS I/O scheduler"
 	default y
@@ -68,6 +73,8 @@ config IOSCHED_FIOPS
 	Requests are chosen according to SSTF with a penalty of rev_penalty
 	for switching head direction.
 
+=======
+>>>>>>> 7c60007... block: cgroups, kconfig, build bits for BFQ-v7r8-3.10.8+
 config CGROUP_BFQIO
 	bool "BFQ hierarchical scheduling support"
 	depends on CGROUPS && IOSCHED_BFQ=y
@@ -100,6 +107,10 @@ choice
 		  any workload. It also tries to guarantee low latency to
 		  interactive and soft real-time applications.
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7c60007... block: cgroups, kconfig, build bits for BFQ-v7r8-3.10.8+
 	config DEFAULT_NOOP
 		bool "No-op"
         config DEFAULT_FIOPS
