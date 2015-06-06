@@ -1086,6 +1086,7 @@ static struct bfq_queue *bfq_get_next_queue(struct bfq_data *bfqd)
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 /*
  * Forced extraction of the given queue.
@@ -1116,6 +1117,8 @@ static void bfq_get_next_queue_forced(struct bfq_data *bfqd,
 }
 
 >>>>>>> c7e67fe... block: introduce the BFQ-v7r8 I/O sched for 3.10.8+
+=======
+>>>>>>> 10b7c50... block, bfq: add Early Queue Merge (EQM) to BFQ-v7r8 for 3.10.8+
 static void __bfq_bfqd_reset_in_service(struct bfq_data *bfqd)
 {
 	if (bfqd->in_service_bic != NULL) {

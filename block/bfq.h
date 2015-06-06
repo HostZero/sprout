@@ -219,15 +219,20 @@ struct bfq_group;
  *                      the task associated with the queue it is deemed as
  *                      soft real-time (see the comments to the function
 <<<<<<< HEAD
+<<<<<<< HEAD
  *                      bfq_bfqq_softrt_next_start())
 =======
  *                      bfq_bfqq_softrt_next_start()).
 >>>>>>> c7e67fe... block: introduce the BFQ-v7r8 I/O sched for 3.10.8+
+=======
+ *                      bfq_bfqq_softrt_next_start())
+>>>>>>> 10b7c50... block, bfq: add Early Queue Merge (EQM) to BFQ-v7r8 for 3.10.8+
  * @last_idle_bklogged: time of the last transition of the @bfq_queue from
  *                      idle to backlogged
  * @service_from_backlogged: cumulative service received from the @bfq_queue
  *                           since the last transition from idle to
  *                           backlogged
+<<<<<<< HEAD
 <<<<<<< HEAD
  * @bic: pointer to the bfq_io_cq owning the bfq_queue, set to %NULL if the
  *	 queue is shared
@@ -246,6 +251,17 @@ struct bfq_group;
  * a bfqq still references it (mostly to avoid races between request issuing and
  * task migration followed by cgroup destruction).
 >>>>>>> c7e67fe... block: introduce the BFQ-v7r8 I/O sched for 3.10.8+
+=======
+ * @bic: pointer to the bfq_io_cq owning the bfq_queue, set to %NULL if the
+ *	 queue is shared
+ *
+ * A bfq_queue is a leaf request queue; it can be associated with an
+ * io_context or more, if it  is  async or shared  between  cooperating
+ * processes. @cgroup holds a reference to the cgroup, to be sure that it
+ * does not disappear while a bfqq still references it (mostly to avoid
+ * races between request issuing and task migration followed by cgroup
+ * destruction).
+>>>>>>> 10b7c50... block, bfq: add Early Queue Merge (EQM) to BFQ-v7r8 for 3.10.8+
  * All the fields are protected by the queue lock of the containing bfqd.
  */
 struct bfq_queue {
@@ -286,9 +302,13 @@ struct bfq_queue {
 
 	pid_t pid;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	struct bfq_io_cq *bic;
 =======
 >>>>>>> c7e67fe... block: introduce the BFQ-v7r8 I/O sched for 3.10.8+
+=======
+	struct bfq_io_cq *bic;
+>>>>>>> 10b7c50... block, bfq: add Early Queue Merge (EQM) to BFQ-v7r8 for 3.10.8+
 
 	/* weight-raising fields */
 	unsigned long wr_cur_max_time;
@@ -319,6 +339,9 @@ struct bfq_ttime {
  * @bfqq: array of two process queues, the sync and the async
  * @ttime: associated @bfq_ttime struct
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 10b7c50... block, bfq: add Early Queue Merge (EQM) to BFQ-v7r8 for 3.10.8+
  * @wr_time_left: snapshot of the time left before weight raising ends
  *                for the sync queue associated to this process; this
  *		  snapshot is taken to remember this value while the weight
@@ -339,8 +362,11 @@ struct bfq_ttime {
  *                by any of the process' @bfq_queues
  * @failed_cooperations: counter of consecutive failed queue merges of any
  *                       of the process' @bfq_queues
+<<<<<<< HEAD
 =======
 >>>>>>> c7e67fe... block: introduce the BFQ-v7r8 I/O sched for 3.10.8+
+=======
+>>>>>>> 10b7c50... block, bfq: add Early Queue Merge (EQM) to BFQ-v7r8 for 3.10.8+
  */
 struct bfq_io_cq {
 	struct io_cq icq; /* must be the first member */
@@ -348,6 +374,9 @@ struct bfq_io_cq {
 	struct bfq_ttime ttime;
 	int ioprio;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 10b7c50... block, bfq: add Early Queue Merge (EQM) to BFQ-v7r8 for 3.10.8+
 
 	unsigned int wr_time_left;
 	bool saved_idle_window;
@@ -358,8 +387,11 @@ struct bfq_io_cq {
 
 	unsigned int cooperations;
 	unsigned int failed_cooperations;
+<<<<<<< HEAD
 =======
 >>>>>>> c7e67fe... block: introduce the BFQ-v7r8 I/O sched for 3.10.8+
+=======
+>>>>>>> 10b7c50... block, bfq: add Early Queue Merge (EQM) to BFQ-v7r8 for 3.10.8+
 };
 
 enum bfq_device_speed {
@@ -593,10 +625,14 @@ enum bfqq_state_flags {
 	BFQ_BFQQ_FLAG_sync,		/* synchronous queue */
 	BFQ_BFQQ_FLAG_budget_new,	/* no completion with this budget */
 <<<<<<< HEAD
+<<<<<<< HEAD
 	BFQ_BFQQ_FLAG_IO_bound,		/*
 =======
 	BFQ_BFQQ_FLAG_IO_bound,         /*
 >>>>>>> c7e67fe... block: introduce the BFQ-v7r8 I/O sched for 3.10.8+
+=======
+	BFQ_BFQQ_FLAG_IO_bound,		/*
+>>>>>>> 10b7c50... block, bfq: add Early Queue Merge (EQM) to BFQ-v7r8 for 3.10.8+
 					 * bfqq has timed-out at least once
 					 * having consumed at most 2/10 of
 					 * its budget
@@ -610,20 +646,29 @@ enum bfqq_state_flags {
 					 * seeky until budget timeout
 					 */
 <<<<<<< HEAD
+<<<<<<< HEAD
 	BFQ_BFQQ_FLAG_softrt_update,	/*
 =======
 	BFQ_BFQQ_FLAG_softrt_update,    /*
 >>>>>>> c7e67fe... block: introduce the BFQ-v7r8 I/O sched for 3.10.8+
+=======
+	BFQ_BFQQ_FLAG_softrt_update,	/*
+>>>>>>> 10b7c50... block, bfq: add Early Queue Merge (EQM) to BFQ-v7r8 for 3.10.8+
 					 * may need softrt-next-start
 					 * update
 					 */
 	BFQ_BFQQ_FLAG_coop,		/* bfqq is shared */
+<<<<<<< HEAD
 <<<<<<< HEAD
 	BFQ_BFQQ_FLAG_split_coop,	/* shared bfqq will be split */
 	BFQ_BFQQ_FLAG_just_split,	/* queue has just been split */
 =======
 	BFQ_BFQQ_FLAG_split_coop,	/* shared bfqq will be splitted */
 >>>>>>> c7e67fe... block: introduce the BFQ-v7r8 I/O sched for 3.10.8+
+=======
+	BFQ_BFQQ_FLAG_split_coop,	/* shared bfqq will be split */
+	BFQ_BFQQ_FLAG_just_split,	/* queue has just been split */
+>>>>>>> 10b7c50... block, bfq: add Early Queue Merge (EQM) to BFQ-v7r8 for 3.10.8+
 };
 
 #define BFQ_BFQQ_FNS(name)						\
@@ -653,9 +698,13 @@ BFQ_BFQQ_FNS(constantly_seeky);
 BFQ_BFQQ_FNS(coop);
 BFQ_BFQQ_FNS(split_coop);
 <<<<<<< HEAD
+<<<<<<< HEAD
 BFQ_BFQQ_FNS(just_split);
 =======
 >>>>>>> c7e67fe... block: introduce the BFQ-v7r8 I/O sched for 3.10.8+
+=======
+BFQ_BFQQ_FNS(just_split);
+>>>>>>> 10b7c50... block, bfq: add Early Queue Merge (EQM) to BFQ-v7r8 for 3.10.8+
 BFQ_BFQQ_FNS(softrt_update);
 #undef BFQ_BFQQ_FNS
 
