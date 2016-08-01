@@ -44,7 +44,7 @@ echo -e "$White***********************************************"
 echo "        Compiling ElectraBlue Kernel           "
 echo -e "***********************************************$nocol"
 make clean && make mrproper
-make sprout_defconfig
+make cyanogenmod_sprout_defconfig
 make -j2
 if ! [ -a $ZIMAGE ];
 then
