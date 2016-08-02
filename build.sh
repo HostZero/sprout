@@ -35,7 +35,7 @@ export ARCH=arm
 export SUBARCH=arm
 export KBUILD_BUILD_USER="VipulJha"
 export KBUILD_BUILD_HOST="TechFlue"
-export CROSS_COMPILE="/home/vipul/arm-eabi-6.0/bin/arm-eabi-"
+export CROSS_COMPILE=/home/vipul/arm-eabi-6.0/bin/arm-eabi-
 
 # Compilation Scripts
 compile_kernel ()
