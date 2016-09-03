@@ -42,7 +42,7 @@ export CROSS_COMPILE=/home/hostzero/UBERTC-arm-eabi-6.0/bin/arm-eabi-
 compile_kernel ()
 {
 make clean && make mrproper
-make cyanogenmod_sprout_defconfig
+make sprout_defconfig
 make -j2
 if ! [ -a $ZIMAGE ];
 then
