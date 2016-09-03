@@ -36,7 +36,7 @@ export ARCH=arm
 export SUBARCH=arm
 export KBUILD_BUILD_USER="HostZero"
 export KBUILD_BUILD_HOST="Linux"
-export CROSS_COMPILE=/home/hostzero/UBERTC-arm-eabi-6.0/bin/arm-eabi-
+export CROSS_COMPILE=/home/hostzero/linaro-5.2/bin/arm-eabi-
 
 # Compilation Scripts
 compile_kernel ()
