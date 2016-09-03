@@ -1,5 +1,6 @@
 #
-# Copyright © 2016, "Vipul Jha" <vipuljha08@gmail.com>
+# Copyright © 2016, "Haneesh Raja" <haneesh.da.rocker@gmail.com>
+# Thanks to Vipul Jha "vipuljha08" <vipuljha08@gmail.com>
 # Thanks to Kunal Kene "kunalkene1797" <kunalkene1797@gmail.com>
 # Thanks to Varun Chitre "varunchitre15" <varunchitre15@gmail.com>
 #
@@ -33,16 +34,13 @@ nocol='\033[0m'         # Default
 # Exports
 export ARCH=arm
 export SUBARCH=arm
-export KBUILD_BUILD_USER="VipulJha"
-export KBUILD_BUILD_HOST="TechFlue"
-export CROSS_COMPILE=/home/vipul/arm-eabi-6.0/bin/arm-eabi-
+export KBUILD_BUILD_USER="HostZero"
+export KBUILD_BUILD_HOST="Linux"
+export CROSS_COMPILE=/home/hostzero/UBERTC-arm-eabi-6.0/bin/arm-eabi-
 
 # Compilation Scripts
 compile_kernel ()
 {
-echo -e "$White***********************************************"
-echo "        Compiling ElectraBlue Kernel           "
-echo -e "***********************************************$nocol"
 make clean && make mrproper
 make cyanogenmod_sprout_defconfig
 make -j2
