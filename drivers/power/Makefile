@@ -57,5 +57,6 @@ obj-$(CONFIG_SMB350_CHARGER)   += smb350_charger.o
 obj-$(CONFIG_SMB135X_CHARGER)   += smb135x-charger.o
 obj-$(CONFIG_SMB1360_CHARGER_FG) += smb1360-charger-fg.o
 obj-$(CONFIG_SMB358_CHARGER)	+= smb358-charger.o
+obj-$(CONFIG_BATTERY_BCL)	+= battery_current_limit.o
 obj-$(CONFIG_CHARGER_TPS65090)	+= tps65090-charger.o
 obj-$(CONFIG_POWER_RESET)	+= reset/
