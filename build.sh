@@ -35,7 +35,7 @@ nocol='\033[0m'         # Default
 export ARCH=arm
 export SUBARCH=arm
 export KBUILD_BUILD_USER="HostZero"
-export KBUILD_BUILD_HOST="Linux"
+export KBUILD_BUILD_HOST="Pandora-Kernel"
 export CROSS_COMPILE=/home/hostzero/linaro-5.2/bin/arm-eabi-
 
 # Compilation Scripts
