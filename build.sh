@@ -36,13 +36,19 @@ export ARCH=arm
 export SUBARCH=arm
 export KBUILD_BUILD_USER="HostZero"
 export KBUILD_BUILD_HOST="Pandora-Kernel"
-export CROSS_COMPILE=/home/hostzero/linaro-5.2/bin/arm-eabi-
+export CROSS_COMPILE=/home/hostzero/linaro-4.9/bin/arm-cortex-linux-gnueabi-
 
 # Compilation Scripts
+echo
+echo ######################################
+echo #          Starting Build            #
+echo #        Pandora-Kernel_v2.0         #
+echo ######################################
+echo
 compile_kernel ()
 {
 make clean && make mrproper
-make sprout_defconfig
+make pandora_defconfig
 make -j2
 if ! [ -a $ZIMAGE ];
 then
