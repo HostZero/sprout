@@ -412,5 +412,25 @@ config SH_CPU_FREQ
 	  If unsure, say N.
 endmenu
 
+menu "Hyper"
+config CPU_FREQ_GOV_HYPER
+	tristate "'hyper' cpufreq governor"
+	depends on CPU_FREQ
+	---help---
+	  'hyper' - A tweaked "ondemand" based smart and smooth optimized governor!
+	
+	   If in doubt, say N.
+endmenu
+
+menu "Lionheart"
+config CPU_FREQ_GOV_LIONHEART
+	tristate "'lionheart' cpufreq governor"
+	depends on CPU_FREQ
+	---help---
+	  'hyper' - A tweaked "ondemand" based smart and smooth optimized governor!
+	
+	   If in doubt, say N.
+endmenu
+
 endif
 endmenu
