@@ -4,6 +4,12 @@
 
 menu "Misc devices"
 
+config SOUND_CONTROL
+	tristate "Sound Control"
+	default y
+	help
+	  This adds support for tweaking the Sound Card driver
+	  parameters. Currently only Headphones volume boost.
 
 config ANDROID_PMEM
         bool "Android pmem allocator"
