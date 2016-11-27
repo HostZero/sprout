@@ -15,6 +15,13 @@ config FORCE_FAST_CHARGE
 	  A simple sysfs interface to increase input current limit to
 	  900mA when charging via USB.
 
+config CONFIG_FORCEFASTCHARGE_CONTROL
+	boot "Force Fast Charge Control to charge rate"
+	default y
+	help
+	  A tool for mediatek devices for controling the charge rate
+	  of FORCE_FAST_CHARGE by flar2.
+
 config POWER_SUPPLY_DEBUG
 	bool "Power supply debug"
 	help
@@ -87,6 +94,14 @@ config BATTERY_DS2760
 	depends on W1 && W1_SLAVE_DS2760
 	help
 	  Say Y here to enable support for batteries with ds2760 chip.
+
+config BATTERY_BCL
+	tristate "Battery Current Limit driver"
+	help
+	  Say Y here to enable support for battery current limit
+	  device. The BCL driver will poll BMS if
+	  thermal daemon enables BCL.
+	  It will notify thermal daemon if IBat crosses Imax threshold.
 
 config BATTERY_DS2780
 	tristate "DS2780 battery driver"
