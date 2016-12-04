@@ -16,7 +16,7 @@ config FORCE_FAST_CHARGE
 	  900mA when charging via USB.
 
 config CONFIG_FORCEFASTCHARGE_CONTROL
-	boot "Force Fast Charge Control to charge rate"
+	bool "Force Fast Charge Control to charge rate"
 	default y
 	help
 	  A tool for mediatek devices for controling the charge rate
